@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngapali Beach</title>
+
+    <style>
+        @keyframes gradientMove {
+            0% { background-position: 100% 50%; }
+            50% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }   
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                }           
+        }
+
+        @keyframes zoomIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes blurIn {
+            to {
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        body {
+            background: linear-gradient(100deg, #5b7780, #0049a3);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+            margin: 0;
+            padding: 40px;;
+            background-size: 400% 400%;
+            animation: gradientMove 10s ease infinite;
+            
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            padding: 20px;
+        }
+
+        .photo {
+            width: 500px;
+            border-radius: 15px;
+        }
+
+        .content {
+            max-width: 600px;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        
+
+        img {
+            transition: 0.4s ease;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: zoomIn 0.8s ease forwards;
+        }
+
+        h2 {
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        .section {
+            background-color: rgba(255,255,255,0.15);
+            width: 560px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        h1, h2 {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 1s ease forwards;
+        }
+
+        p {
+            opacity: 0;
+            filter: blur(5px);
+            animation: blurIn 1s ease forwards;
+        }
+
+        button {
+           transition: 0.3s ease;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    <button onclick="history.back()" class="back-btn"
+        style="padding: 10px; background-color: white; color: #222; font-size: 18px; border-radius: 6px; border: 2px solid #222;">
+        ⬅️ Back
+    </button>
+    <h1 style="margin-top: 60px;">Ngapali Beach (ငပလီ ကမ်းခြေ)</h1>
+    </header>
+
+    <img src="img/ngapali.jpg" alt="Ngapali Beach" style="border-radius: 10px; float: right; margin-left: 15px;">
+    <button id="translateButton" onclick="toogleLanguage()" style="position:relative; padding: 7px; font-size: 15px; background-color: rgb(255, 255, 255); border: 1px solid black; border-radius: 5px; color: rgb(0, 0, 0); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-style: initial; font-weight: lighter;" align="right"><b>Switch to Burmese</b></button>
+    <br><br>
+    <div style="float: left;">
+    <div class="section" id="english">
+        <h2>Ngapali Beach</h2>
+        <p>
+            Ngapali Beach is one of the most beautiful beaches in Myanmar. 
+            It is located in Rakhine State near Thandwe. The beach is famous 
+            for its white sand, clear blue water, and peaceful atmosphere.
+        </p>
+        <p>
+            Many tourists visit Ngapali Beach to relax, swim, and enjoy 
+            fresh seafood. It is a perfect place for holidays and sunset views.
+        </p>
+    </div>
+
+    
+    <div class="section" id="burmese">
+        <h2>ငပလီကမ်းခြေ</h2>
+        <p>
+            ငပလီကမ်းခြေသည် မြန်မာနိုင်ငံတွင် အလှဆုံးကမ်းခြေများထဲမှ တစ်ခုဖြစ်သည်။
+            ရခိုင်ပြည်နယ် သံတွဲမြို့အနီးတွင် တည်ရှိပြီး အဖြူရောင်သဲများ၊ 
+            ပြာလန်းလန်းရေပြင်နှင့် အေးချမ်းသောပတ်ဝန်းကျင်ကြောင့် နာမည်ကြီးသည်။
+        </p>
+        <p>
+            ခရီးသွားများသည် အနားယူရန်၊ ရေကူးရန်နှင့် ပင်လယ်စာများ စားသောက်ရန် 
+            ငပလီကမ်းခြေသို့ လာရောက်လည်ပတ်ကြသည်။
+        </p>
+    </div>
+    </div>
+
+    <script>
+        var english = document.getElementById("english");
+        var burmese = document.getElementById("burmese");
+
+        burmese.style.display = "none";
+
+        function toogleLanguage() {
+            if (english.style.display === "none"){
+                english.style.display = "block";
+                burmese.style.display = "none";
+                document.getElementById("translateButton").textContent = "Switch to Burmese";
+            }
+            else {
+                english.style.display = "none";
+                burmese.style.display = "block";
+                document.getElementById("translateButton").textContent = "Switch to English";
+            }
+        }
+    </script>
+
+</body>
+</html>

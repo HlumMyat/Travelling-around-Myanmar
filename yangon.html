@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yangon</title>
+
+    <style> 
+        @keyframes gradientMove {
+            0% { background-position: 100% 50%; }
+            50% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }   
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                }           
+        }
+
+        @keyframes zoomIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes blurIn {
+            to {
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        body {
+            background: linear-gradient(100deg, #2c3e50, rgb(177, 189, 110), #f3d53e);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+            background-size: 400% 400%;
+            animation: gradientMove 10s ease infinite;
+            
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            padding: 20px;
+        }
+
+
+        .content {
+            max-width: 600px;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        h2 {
+            color: #fff8dc;
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
+
+        .section {
+            background-color: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        img {
+            transition: 0.4s ease;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: zoomIn 0.8s ease forwards;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 1s ease forwards;
+        }
+
+        p {
+            opacity: 0;
+            filter: blur(5px);
+            animation: blurIn 1s ease forwards;
+        }
+
+        button {
+           transition: 0.3s ease;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="history.back()" class="back-btn" style="padding: 10px; background-color: white; color: #222; font-size: 18px; border-radius: 6px; border: 2px solid #222;">⬅️ Back</button>
+    <h1 style="margin-left: 130px;">Yangon (ရန်ကုန်)</h1>
+
+    <div class="container">
+    <img src="img/yangon1.jpg" alt="Yangon" style="float: left; border-radius: 20px;" width="560px" height="500px">
+
+    <div class="text" width="600px" >
+        <button id="translateButton" onclick="toogleLanguage()" style="position:relative; padding: 7px; font-size: 15px; background-color: rgb(255, 255, 255); border: 1px solid black; border-radius: 5px; color: rgb(0, 0, 0); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-style: initial; font-weight: lighter;" align="right"><b>Switch to Burmese</b></button>
+        
+    <div class="section" id="english">
+        <h2>Yangon</h2>
+        <p>
+            Yangon is the largest city in Myanmar and the former capital of the country.
+            It is the main economic and cultural center of Myanmar.
+        </p>
+        <p>
+            One of the most famous landmarks in Yangon is the Shwedagon Pagoda,
+            which is covered in gold and attracts many visitors every year.
+            Yangon is also known for its colonial buildings, busy markets,
+            and delicious street food.
+        </p>
+    </div>>
+    <div class="section" id="burmese">
+        <h2>ရန်ကုန်မြို့</h2>
+        <p>
+            ရန်ကုန်မြို့သည် မြန်မာနိုင်ငံ၏ အကြီးဆုံးမြို့ဖြစ်ပြီး ယခင်မြို့တော်လည်း ဖြစ်သည်။
+            စီးပွားရေးနှင့် ယဉ်ကျေးမှုအတွက် အရေးကြီးသော မြို့တစ်မြို့ ဖြစ်ပါသည်။
+        </p>
+        <p>
+            ရန်ကုန်တွင် ရွှေတိဂုံစေတီတော်သည် အထင်ရှားဆုံး သမိုင်းဝင်နေရာဖြစ်ပြီး
+            နှစ်စဉ် ခရီးသွားများစွာ လာရောက်လည်ပတ်ကြသည်။
+            ထို့အပြင် အာရှခေတ် အဆောက်အအုံများ၊ စျေးများနှင့် လမ်းဘေးအစားအစာများကြောင့်လည်း နာမည်ကြီးသည်။
+        </p>
+    </div>
+    </div>
+    </div>  
+
+
+    <script>
+        var english = document.getElementById("english");
+        var burmese = document.getElementById("burmese");
+
+        burmese.style.display = "none";
+
+        function toogleLanguage() {
+            if (english.style.display === "none"){
+                english.style.display = "block";
+                burmese.style.display = "none";
+                document.getElementById("translateButton").textContent = "Switch to Burmese";
+            }
+            else {
+                english.style.display = "none";
+                burmese.style.display = "block";
+                document.getElementById("translateButton").textContent = "Switch to English";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Bagan </title>
+    <style>
+        @keyframes gradientMove {
+            0% { background-position: 100% 50%; }
+            50% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }   
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                }           
+        }
+
+        @keyframes zoomIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes blurIn {
+            to {
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        body {
+            background: linear-gradient(100deg, #A8DADC, #F4A261);
+            margin: 0;
+            font-family: Georgia, serif;
+            background-size: 400% 400%;
+            animation: gradientMove 10s ease infinite;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        
+
+        img {
+            transition: 0.4s ease;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: zoomIn 0.8s ease forwards;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            margin-top: 40px;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 1s ease forwards;
+        }
+
+        p {
+            opacity: 0;
+            filter: blur(5px);
+            animation: blurIn 1s ease forwards;
+        }
+
+        button {
+           transition: 0.3s ease;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        .side-img {
+            width: 550px;
+            border-radius: 20px;
+            height: 390px;
+        }
+
+        .text {
+            max-width: 500px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="history.back()" class="back-btn" style="padding: 10px; margin: 20px; background-color: white; color: #222; font: xx-large; border-radius: 6px; border: 2px solid #222;">⬅️ Back</button>
+    <h1 style="margin-left: 130px;">Bagan(ပုဂံ)</h1>
+
+<div class="section">
+
+    <!-- Left Image -->
+    <img src="img/bagan1.jpg" class="side-img" alt="Bagan">
+
+    <!-- Middle Text -->
+    <div class="text">
+
+        <button id="translateButton" onclick="toogleLanguage()" style="position:relative; padding: 7px; font-size: 15px; background-color: rgb(255, 255, 255); border: 1px solid black; border-radius: 5px; color: rgb(0, 0, 0); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-style: initial; font-weight: lighter;" align="right"><b>Switch to Burmese</b></button>
+
+    <div id="english">
+    <h1> Bagan </h1>
+    <p>Bagan is one of Myanmar’s most breathtaking historical treasures. 
+    Located in the Mandalay Region, it is famous for its thousands of ancient temples and pagodas spread across a wide plain. 
+    Built between the 9th and 13th centuries, these sacred monuments reflect the rich cultural and spiritual heritage of the Bagan Kingdom.
+    At sunrise and sunset, the golden light over the temples creates a magical and unforgettable view, making Bagan a must-visit destination for travelers and history lovers alike.</p>
+    </div>
+    
+    <div id="burmese">
+        <h1> ပုဂံ </h1>
+        <p>ပုဂံသည် မြန်မာနိုင်ငံ၏ အလွန်လှပပြီး တန်ဖိုးရှိသော သမိုင်းဝင်အမွေအနှစ်နေရာများအနက် တစ်ခုဖြစ်သည်။ 
+        မန္တလေးတိုင်းဒေသကြီးတွင် တည်ရှိပြီး ကျယ်ပြန့်သော မြေပြင်တစ်လျှောက်တွင် ရှေးဟောင်း ဘုရားပုထိုးများ ထောင်ချီ တည်ရှိသဖြင့် နာမည်ကြီးသည်။
+        ၉ ရာစုမှ ၁၃ ရာစုအတွင်း တည်ဆောက်ခဲ့သော ဤသန့်ရှင်းသော အဆောက်အအုံများသည် ပုဂံခေတ်၏ ယဉ်ကျေးမှုနှင့် ဝိညာဉ်ရေးရာ အမွေအနှစ်များကို ထင်ဟပ်စေသည်။ 
+        နေထွက်နှင့် နေဝင်ချိန်တွင် ဘုရားပုထိုးများအပေါ် ရွှေရောင်အလင်းရောင် လင်းလက်ပျံ့နှံ့နေသော မြင်ကွင်းသည် မမေ့နိုင်စရာ အလှတရားတစ်ခု ဖြစ်စေသည်။</p>
+    </div>
+</div>
+
+
+    <script>
+        var english = document.getElementById("english");
+        var burmese = document.getElementById("burmese");
+
+        burmese.style.display = "none";
+
+        function toogleLanguage() {
+            if (english.style.display === "none"){
+                english.style.display = "block";
+                burmese.style.display = "none";
+                document.getElementById("translateButton").textContent = "Switch to Burmese";
+            }
+            else {
+                english.style.display = "none";
+                burmese.style.display = "block";
+                document.getElementById("translateButton").textContent = "Switch to English";
+            }
+        }
+    </script>
+
+</body>
+</html>

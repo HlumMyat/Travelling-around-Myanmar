@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyaiktiyo Pagoda</title>
+    <style>
+        @keyframes gradientMove {
+            0% { background-position: 100% 50%; }
+            50% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }   
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                }           
+        }
+
+        @keyframes zoomIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes blurIn {
+            to {
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        body {
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.4);
+            background: linear-gradient(100deg, rgba(255, 255, 255, 0.4), #F7971E, #FFD200);
+            background-size: 400% 400%;
+            animation: gradientMove 10s ease infinite;
+            
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        
+
+        img {
+            transition: 0.4s ease;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: zoomIn 0.8s ease forwards;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 1s ease forwards;
+        }
+
+        p {
+            opacity: 0;
+            filter: blur(5px);
+            animation: blurIn 1s ease forwards;
+        }
+
+        button {
+           transition: 0.3s ease;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <button onclick="history.back()" class="back-btn" style="padding: 10px; background-color: white; color: #222; font: xx-large; border-radius: 6px; border: 2px solid #222; position: absolute;
+            top: 20px;
+            left: 20px;">⬅ Back</button>
+    <h1 style="margin-left: 100px;">Kyaiktiyo Pagoda (ကျိုက်ထီးရိုး)</h1>
+
+    <button id="translateButton" onclick="toogleLanguage()" style="position:relative; padding: 7px; font-size: 15px; background-color: rgb(255, 255, 255); border: 1px solid black; border-radius: 5px; color: rgb(0, 0, 0); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-style: initial; font-weight: lighter;" align="right"><b>Switch to Burmese</b></button>
+
+
+    <img src="img/kyaiktiyo1.jpg" alt="Kyaitiyo" width="450px" height="560px" style="border-radius: 10px; float: left; margin-right: 15px;">
+
+    <div id="english">
+        <h1>Kyaiktiyo (Golden Rock) </h1>
+
+        <p>Kyaiktiyo Pagoda, also known as the Golden Rock, is one of the most famous and sacred Buddhist pilgrimage sites in Myanmar. It is located in Mon State and sits on the top of Mount Kyaiktiyo.
+        The pagoda is built on a large golden boulder that appears to be balancing on the edge of a cliff. According to legend, the rock remains in place because of a strand of the Buddha’s hair enshrined inside it.
+        Every year, thousands of pilgrims and tourists visit Kyaiktiyo to pray, meditate, and admire the breathtaking views, especially at sunrise and sunset. The glowing golden rock against the sky creates a truly unforgettable sight.</p>
+    
+        <h1>History and Construction</h1>
+        <p> According to historical records and local tradition, Kyaiktiyo Pagoda is believed to have been built over 2,500 years ago during the lifetime of the Buddha. It is said that King Tissa, a Mon king, constructed the pagoda after receiving a sacred hair relic of the Buddha from a hermit. The king enshrined the hair relic inside the golden rock, which is why the rock is believed to remain balanced on the cliff.
+        Over the centuries, the pagoda has been renovated and covered with gold leaves donated by devotees. Today, it remains one of the most important religious landmarks in Myanmar.</p>
+    
+    </div>
+    
+    <div id="burmese">
+        <h1>ကျိုက်ထီးရိုး (ရွှေကျောက်တုံး) </h1>
+
+        <p>ကျိုက်ထီးရိုးစေတီတော်ကို ရွှေကျောက်တုံးဟုလည်း လူသိများကြပြီး မြန်မာနိုင်ငံတွင် အလွန်ထင်ရှားသော ဗုဒ္ဓဘာသာဝင်များ၏ ဘုရားဖူးရာ နေရာတစ်ခု ဖြစ်သည်။ ၎င်းသည် မွန်ပြည်နယ်ရှိ ကျိုက်ထီးရိုးတောင်ထိပ်တွင် တည်ရှိသည်။
+        စေတီတော်သည် ချောက်ကမ်းပါးအစွန်းပေါ်တွင် တည်ရှိသော ရွှေရောင်လိမ်းထားသည့် ကျောက်တုံးကြီးတစ်ခု၏ အပေါ်တွင် တည်ဆောက်ထားပြီး ချောက်ကမ်းပါးမှ လွင့်ကျသွားမည့်ပုံစံဖြင့် တည်ရှိနေသည်။
+        ဒဏ္ဍာရီအရ ကျောက်တုံးအတွင်းတွင် ဗုဒ္ဓဘုရားရှင်၏ ဆံတော်တစ်မျှင် ထည့်သွင်းထားခြင်းကြောင့် ကျောက်တုံးသည် မလွင့်ကျဘဲ တည်ရှိနေသည်ဟု ယုံကြည်ကြသည်။
+        နှစ်စဉ် ဘုရားဖူးများနှင့် ခရီးသွားဧည့်သည်များအများအပြား လာရောက်ကြပြီး နေထွက်ချိန်နှင့် နေဝင်ချိန်များတွင် မြင်ရသော မြင်ကွင်းသည် အလွန်လှပထင်ရှားလှသည်။</p>
+    
+        <h1>သမိုင်းနှင့် တည်ဆောက်ခြင်</h1>
+        <p>သမိုင်းမှတ်တမ်းများနှင့် ဒေသခံယုံကြည်ချက်များအရ ကျိုက်ထီးရိုးဘုရားကို ဘုရားရှင် အသက်ရှင်နေစဉ်ကာလ အတွင်း လွန်ခဲ့သော နှစ်ပေါင်း ၂၅၀၀ ကျော်ခန့်တွင် တည်ဆောက်ခဲ့သည်ဟု ယုံကြည်ကြသည်။ မွန်မင်းတစ်ပါးဖြစ်သော တိဿမင်းသည် ဘုရားရှင်၏ ဆံတော်တစ်ချောင်းကို သန့်ရှင်းသော တောထဲနေဆရာတစ်ဦးထံမှ ရရှိပြီးနောက် ဘုရားကို တည်ဆောက်ခဲ့သည်ဟု ဒဏ္ဍာရီတွင် ဖော်ပြထားပါသည်။
+        မင်းသည် ထိုဆံတော်ကို ရွှေကျောက်တုံးအတွင်း ထည့်သွင်းထားခဲ့ပြီး ထို့ကြောင့် ကျောက်တုံးသည် မကျဘဲ ချိန်ညှိတည်ရှိနေသည်ဟု ယုံကြည်ကြပါသည်။ ရာစုနှစ်များအတွင်း ယုံကြည်သူများမှ ရွှေစက္ကူများကပ်လှူကာ ပြုပြင်ထိန်းသိမ်းလာခဲ့ကြသည်။ ယနေ့တွင်လည်း မြန်မာနိုင်ငံ၏ အရေးကြီးဆုံး ဘုရားပူဇော်ရာနေရာများထဲမှ တစ်ခုအဖြစ် ရပ်တည်လျက်ရှိပါသည်။</p>
+    
+    
+    </div>
+    
+    <script>
+        var english = document.getElementById("english");
+        var burmese = document.getElementById("burmese");
+
+        burmese.style.display = "none";
+
+        function toogleLanguage() {
+            if (english.style.display === "none"){
+                english.style.display = "block";
+                burmese.style.display = "none";
+                document.getElementById("translateButton").textContent = "Switch to Burmese";
+            }
+            else {
+                english.style.display = "none";
+                burmese.style.display = "block";
+                document.getElementById("translateButton").textContent = "Switch to English";
+            }
+        }
+    </script>
+    
+</body>
+</html>
